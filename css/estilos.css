@@ -13,7 +13,7 @@ body {
 }
 
 .contenedor {
-  margin: 20px auto;
+  margin: auto;
   width: 90%;
   max-width: 1000px;
   display: -webkit-box;
@@ -29,7 +29,10 @@ body {
 
 .contenedor header {
   width: 100%;
-  padding: 50px 0;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  margin-top: 20px;
+  border-radius: 4px 4px 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -45,9 +48,33 @@ body {
           align-items: center;
 }
 
+@media screen and (max-width: 600px) {
+  .contenedor header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-bottom: 20px;
+  }
+}
+
 .contenedor header .logo {
   color: #fff;
   font-size: 22px;
+}
+
+@media screen and (max-width: 600px) {
+  .contenedor header .logo {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .contenedor header .menu {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+  }
 }
 
 .contenedor header .menu a {
@@ -55,6 +82,12 @@ body {
   text-decoration: none;
   margin-right: 40px;
   font-size: 18px;
+}
+
+@media screen and (max-width: 600px) {
+  .contenedor header .menu a {
+    margin: 0 10px;
+  }
 }
 
 .contenedor header .menu a:hover {
@@ -65,6 +98,12 @@ body {
   background: #fff;
   padding: 20px;
   width: 70%;
+}
+
+@media screen and (max-width: 800px) {
+  .contenedor .main {
+    width: 100%;
+  }
 }
 
 .contenedor .main article .thumb {
@@ -106,11 +145,91 @@ body {
           justify-content: space-between;
 }
 
+@media screen and (max-width: 800px) {
+  .contenedor aside {
+    width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .contenedor aside {
+    display: none;
+  }
+}
+
 .contenedor aside .ad {
   font-size: 30px;
   text-align: center;
   color: #fff;
   padding: 50px 0;
   background: #4264a2;
+}
+
+@media screen and (max-width: 800px) {
+  .contenedor aside .ad {
+    width: 40%;
+  }
+}
+
+.contenedor footer {
+  margin: 0;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  width: 100%;
+  color: #fff;
+  border-radius: 0 0 4px 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (max-width: 600px) {
+  .contenedor footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .contenedor footer .autor {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .contenedor footer .redes-sociales {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    margin-bottom: 20px;
+  }
+}
+
+.contenedor footer .redes-sociales a {
+  color: #fff;
+  text-decoration: underline;
+  margin-left: 20px;
+}
+
+.contenedor footer .redes-sociales a:hover {
+  text-decoration: none;
 }
 /*# sourceMappingURL=estilos.css.map */

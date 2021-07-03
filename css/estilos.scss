@@ -12,8 +12,26 @@ body{
     
 }
 
+@mixin tamanio800px {
+    @media screen and(max-width:800px) {
+        @content
+    }
+}
+
+@mixin tamanio600px {
+    @media screen and(max-width:600px){
+        @content
+    }
+}
+
+@mixin tamanio400px {
+    @media screen and(max-width:400px){
+        @content
+    }
+}
+
 .contenedor{
-    margin: 20px auto;
+    margin: auto;
     width: 90%;
     max-width: 1000px;
     display: flex;
@@ -21,21 +39,39 @@ body{
     flex-wrap: wrap;
     header{
         width: 100%;
-        padding: 50px 0;
+        padding: 20px;
+        background: rgba(255,255,255, 0.2);
+        margin-top: 20px;
+        border-radius: 4px 4px 0 0;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        @include tamanio600px(){
+            flex-direction: column;
+            padding-bottom: 20px;
+        }
         .logo{
             color: #fff;
             font-size: 22px;
+            @include tamanio600px(){
+                margin-bottom: 20px;
+            }
         }
         .menu{
+            @include tamanio600px(){
+                width: 100%;
+                text-align: center;
+                padding: 20px;
+            }
             a{
                 color: #fff;
                 text-decoration: none;
                 margin-right: 40px;
                 font-size: 18px;
+                @include tamanio600px(){
+                    margin:0 10px;
+                }
                     &:hover{
                     text-decoration: underline; 
                     }
@@ -45,7 +81,10 @@ body{
     .main{
         background: #fff;
         padding:20px;
-        width: 70%;           
+        width: 70%; 
+        @include tamanio800px(){
+            width: 100%;
+        }     
             article{
                 .thumb{
                     margin-bottom: 20px;
@@ -74,13 +113,58 @@ body{
         flex-direction: column;
         flex-wrap: wrap;
         justify-content: space-between;
+        @include tamanio800px(){
+            width: 100%;
+            flex-direction: row;
+        }
+        @include tamanio400px(){
+            display: none;
+        }
         .ad{
             font-size: 30px;
             text-align: center;
             color: #fff;
             padding: 50px 0;
             background: #4264a2;
+            @include tamanio800px(){
+                width: 40%;
+            }
             // margin: 20px;
+        }
+    }
+    footer{
+        margin: 0;
+        background: rgba(255,255,255, 0.2);
+        padding: 20px; 
+        width: 100%;
+        color: #fff;
+        border-radius: 0 0 4px 4px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        @include tamanio600px(){
+            flex-direction: column;
+            text-align: center;
+        }
+        .autor{
+            @include tamanio600px(){
+                order: 2;
+            }
+        }
+        .redes-sociales{
+            @include tamanio600px(){
+                order: 1;
+                margin-bottom: 20px;                    
+            }
+            a{
+                color: #fff;
+                text-decoration: underline;
+                margin-left: 20px;                   
+                &:hover{
+                    text-decoration: none;
+                }
+            }
         }
     }
 }
